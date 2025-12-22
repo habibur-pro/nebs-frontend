@@ -56,7 +56,7 @@ export default function DashboardLayout({
             )}
           </header>
         </div>
-        <div className="p-7  bg-[#F5F6FA] min-h-screen">{children}</div>
+        <div className="p-7 bg-[#F5F6FA] min-h-screen">{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );
