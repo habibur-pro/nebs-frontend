@@ -139,18 +139,6 @@ const NoticeBoard = () => {
   const [selectedDepartment, setSelectedDepartment] = useState("all");
   const [selectedStatus, setSelectedStatus] = useState("all");
   const [publishedDate, setPublishedDate] = useState("");
-  const [publishedStates, setPublishedStates] = useState<
-    Record<number, boolean>
-  >(
-    notices.reduce(
-      (acc, notice) => ({ ...acc, [notice.id]: notice.status === "published" }),
-      {}
-    )
-  );
-
-  const togglePublished = (id: string) => {
-    setPublishedStates((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
   const debounceValue = useDebounce(searchValue, 1000);
   // Use the custom sort hook
   const { sortBy, handleSortChange, getSortIcon } = useSort("-createdAt");
@@ -392,7 +380,8 @@ const NoticeBoard = () => {
                                 <Switch
                                   checked={notice.status === "published"}
                                   onCheckedChange={(checked) => {
-                                    togglePublished(notice.id);
+                                    console.log("checked", checked);
+                                    // togglePublished(notice.id);
                                   }}
                                 />
                               </div>
