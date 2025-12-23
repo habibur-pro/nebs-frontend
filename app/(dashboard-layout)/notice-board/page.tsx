@@ -148,7 +148,7 @@ const NoticeBoard = () => {
     )
   );
 
-  const togglePublished = (id: number) => {
+  const togglePublished = (id: string) => {
     setPublishedStates((prev) => ({ ...prev, [id]: !prev[id] }));
   };
   const debounceValue = useDebounce(searchValue, 1000);
@@ -392,7 +392,7 @@ const NoticeBoard = () => {
                                 <Switch
                                   checked={notice.status === "published"}
                                   onCheckedChange={(checked) => {
-                                    togglePublished(notice.id, checked);
+                                    togglePublished(notice.id);
                                   }}
                                 />
                               </div>
