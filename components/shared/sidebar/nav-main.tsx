@@ -29,20 +29,20 @@ export function NavMain({
 
   return (
     <SidebarGroup>
-      <SidebarMenu>
+      <SidebarMenu className="space-y-3">
         {items?.map((item) => {
           const isActive = item.isActive || pathname === item.url;
 
           // If no sub-items, render as a simple link
           return (
-            <SidebarMenuItem key={item.title}>
+            <SidebarMenuItem key={item.title} className="">
               <SidebarMenuButton
                 asChild
                 tooltip={item.title}
                 className={`h-[40px]  ${
                   isActive
-                    ? "bg-primary text-gray-700  hover:bg-primary/50"
-                    : "hover:shadow hover:text-black"
+                    ? "bg-[#F5F6FA]  hover:bg-[#F5F6FA] border-r-2 border-r-primary"
+                    : "hover:shadow hover:text-black hover:border-r-2 hover:border-r-primary"
                 }`}
               >
                 <Link href={item.url}>

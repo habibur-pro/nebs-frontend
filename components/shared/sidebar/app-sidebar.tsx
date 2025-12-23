@@ -9,21 +9,39 @@ import {
   SidebarRail,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { FileText, LayoutDashboard } from "lucide-react";
+import {
+  Bell,
+  Box,
+  ClipboardCheck,
+  FileText,
+  FolderOpen,
+  LayoutDashboard,
+  MessageSquare,
+  UserCircle,
+  Users,
+  UsersRound,
+  UserX,
+  Wallet,
+} from "lucide-react";
 import Image from "next/image";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
 import Link from "next/link";
 import { UserRole } from "@/types";
+import { Activity } from "react";
 
 const data = {
   admin: {
     navMain: [
-      {
-        title: "Dashboard",
-        url: "/admin",
-        icon: LayoutDashboard,
-      },
+      { icon: LayoutDashboard, title: "Dashboard", url: "/dashboard" },
+      { icon: Users, title: "Employee", url: "/employee" },
+      { icon: Wallet, title: "Payroll", url: "/payroll" },
+      { icon: FileText, title: "Pay Slip", url: "/pay-slip" },
+      { icon: ClipboardCheck, title: "Attendance", url: "/attendance" },
+      { icon: MessageSquare, title: "Request Center", url: "/request-center" },
+      { icon: UsersRound, title: "Career Database", url: "/career-database" },
+      { icon: FolderOpen, title: "Document manager", url: "/document-manager" },
+      { icon: Bell, title: "Notice Board", url: "/" },
       {
         title: "Notice board",
         url: "/notice-board",
